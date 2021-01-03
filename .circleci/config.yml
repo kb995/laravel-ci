@@ -4,13 +4,10 @@ jobs:
     docker:
       - image: circleci/php:7.3-node-browsers
       - image: circleci/postgres:11.6-alpine
-      # postgres環境
       environment:
         POSTGRES_DB: larasns
         POSTGRES_USER: default
         POSTGRES_PASSWORD: secret
-
-    # bulds設定
     environment:
       APP_ENV: testing
       DB_CONNECTION: pgsql
@@ -19,7 +16,6 @@ jobs:
       DB_DATABASE: larasns
       DB_USERNAME: default
       DB_PASSWORD: secret
-
     steps:
       - checkout
       - run: sudo composer self-update --1
